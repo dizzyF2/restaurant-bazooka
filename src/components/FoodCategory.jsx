@@ -3,21 +3,21 @@
 const foodItems = [
     {
         id: 1,
-        image: "../../public/images/categories/burger.png",
+        image: "/images/categories/burger.png",
         label: 'Save 30% Fast Food Dish',
         highlight: true,
     },
     {
         id: 2,
-        image: "../../public/images/categories/donuts.png",
+        image: "/images/categories/donuts.png",
     },
     {
         id: 3,
-        image: "../../public/images/categories/ramen.png",
+        image: "/images/categories/ramen.png",
     },
     {
         id: 4,
-        image: "../../public/images/categories/sushi.png",
+        image: "/images/categories/sushi.png",
     },
 ];
 

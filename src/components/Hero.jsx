@@ -17,7 +17,7 @@ function Hero() {
 
             <div className="relative mt-10 md:mt-0 md:w-1/2 flex justify-center items-center bg-black">
                 <img
-                    src={"../../public/images/hero-origin.jpg"}
+                    src="/images/hero-origin.jpg"
                     alt="Hero Food"
                     className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full object-cover z-10 bg-inherit"
                 />
