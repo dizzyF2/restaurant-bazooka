@@ -1,6 +1,6 @@
 import BrandLogo from "../BrandLogo"
+import CartStatus from "../CartStatus"
 import SearchBar from "../SearchBar"
-import Cart from "../Cart"
 import { Menu } from "lucide-react"
 import { Link } from "react-router-dom"
 
@@ -23,7 +23,7 @@ function header() {
                 <BrandLogo />
                 <div className="order-3 flex items-center justify-center gap-3">
                     <SearchBar />
-                    <Cart />
+                    <CartStatus />
                 </div>
             </div>
         </header>

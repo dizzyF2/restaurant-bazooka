@@ -1,5 +1,8 @@
-import { Heart, Plus } from "lucide-react"
+import { Check, Heart, Plus } from "lucide-react"
 import { useWishlist } from "../context/WishlistContext";
+import { useCart } from "../context/CartContext";
+import { useState } from "react";
+
 
 
 function ProductCard({ recipe }) {
@@ -7,7 +10,17 @@ function ProductCard({ recipe }) {
     const { image, name: title, cuisine: category, id } = recipe;
     const description = recipe.instructions.slice(0, 100) + "..."
     const price = (recipe.caloriesPerServing / 10).toFixed(2)
+
+    const [added, setAdded] = useState(false);
+
+    const { addToCart } = useCart()
     const { toggleWishlist, isWishlisted } = useWishlist();
+
+    const handleAddToCart = () => {
+        addToCart(recipe);
+        setAdded(true);
+        setTimeout(() => setAdded(false), 1000);
+    };
 
     return (
         <div className="group relative w-full max-w-[300px] flex flex-col items-start justify-between overflow-hidden rounded-lg bg-white transition-all duration-300 border border-gray-200">
@@ -53,12 +66,23 @@ function ProductCard({ recipe }) {
                 </div>
 
                 <button
+                    onClick={handleAddToCart}
                     className={`
                     inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-xs font-medium text-white
-                    transition-all duration-200 hover:gap-2 focus:outline-none bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer`}
+                    transition-all duration-200 hover:gap-2 focus:outline-none bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer
+                    ${added ? "bg-green-600 scale-105" : "bg-blue-600 hover:gap-2 hover:scale-105"}`}
                 >
-                    <Plus className="h-3 w-3" />
-                    add
+                    {added ? (
+                        <>
+                        <Check className="h-3 w-3" />
+                        Added
+                        </>
+                    ) : (
+                        <>
+                        <Plus className="h-3 w-3" />
+                        Add
+                        </>
+                    )}
                 </button>
             </div>
         </div>

@@ -8,20 +8,23 @@ import Layout from './layouts/Layout.jsx'
 import ContactUs from './pages/ContactUs.jsx'
 import { WishlistProvider } from './context/WishlistContext.jsx'
 import Wishlist from './pages/Wishlist.jsx'
+import { CartProvider } from './context/CartContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <WishlistProvider>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<App />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/menu/wishlist" element={<Wishlist />} />
-          </Route>
-        </Routes>
-      </WishlistProvider>
+      <CartProvider>
+        <WishlistProvider>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<App />} />
+              <Route path="/menu" element={<Menu />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/menu/wishlist" element={<Wishlist />} />
+            </Route>
+          </Routes>
+        </WishlistProvider>
+      </CartProvider>
     </BrowserRouter>
   </StrictMode>,
 )
