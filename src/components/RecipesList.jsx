@@ -6,11 +6,7 @@ function RecipesList({ recipes }) {
             {recipes.map(recipe => (
                 <ProductCard
                     key={recipe.id}
-                    image={recipe.image}
-                    title={recipe.name}
-                    description={recipe.instructions.slice(0, 100) + "..."}
-                    price={(recipe.caloriesPerServing / 10).toFixed(2)}
-                    category={recipe.cuisine}
+                    recipe={recipe}
                 />
             ))}
         </div>

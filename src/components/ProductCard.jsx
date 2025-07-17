@@ -1,7 +1,13 @@
 import { Heart, Plus } from "lucide-react"
+import { useWishlist } from "../context/WishlistContext";
 
 
-function ProductCard({image, title, description, price, category}) {
+function ProductCard({ recipe }) {
+
+    const { image, name: title, cuisine: category, id } = recipe;
+    const description = recipe.instructions.slice(0, 100) + "..."
+    const price = (recipe.caloriesPerServing / 10).toFixed(2)
+    const { toggleWishlist, isWishlisted } = useWishlist();
 
     return (
         <div className="group relative w-full max-w-[300px] flex flex-col items-start justify-between overflow-hidden rounded-lg bg-white transition-all duration-300 border border-gray-200">
@@ -13,10 +19,13 @@ function ProductCard({image, title, description, price, category}) {
                     className="absolute object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <button
+                    onClick={() => toggleWishlist(recipe)}
                     className="absolute top-2 right-2 z-10 rounded-full bg-white/90 p-1.5 text-black hover:text-red-500 transition-all duration-200 hover:bg-white hover:scale-110 cursor-pointer"
                 >
                     <Heart
-                        className={`h-3 w-3 transition-colors duration-200 `}
+                        className={`h-3 w-3 transition-colors duration-200 ${
+                        isWishlisted(id) ? 'fill-red-500 text-red-500' : 'text-black'
+                    }`}
                     />
                 </button>
 

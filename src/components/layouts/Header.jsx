@@ -11,6 +11,7 @@ function header() {
             <div className='bg-[#000000b7] flex items-center justify-between gap-5 w-[70%] mx-auto mt-2 py-2 px-3 rounded-full backdrop-blur-md'>
                 <ul className="order-1 hidden md:flex items-center justify-center gap-5 md:text-xs lg:text-sm">
                     <Link to={"/menu"} className="text-white hover:text-primary duration-300 cursor-pointer">Menu</Link>
+                    <Link to={"/menu/wishlist"} className="text-white hover:text-primary duration-300 cursor-pointer">Wishlist</Link>
                     <li className="text-white hover:text-primary duration-300 cursor-pointer">About</li>
                     <Link to={"/contact"} className="text-white hover:text-primary duration-300 cursor-pointer">Contact Us</Link>
                 </ul>
