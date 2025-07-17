@@ -35,6 +35,7 @@ function FoodCategory(){
                     <img
                     src={item.image}
                     alt={`food-${item.id}`}
+                    loading="lazy"
                     className="w-full h-52 object-cover group-hover:scale-105 transition duration-300"
                     />
 

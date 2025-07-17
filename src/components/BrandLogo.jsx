@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom"
 
 function BrandLogo() {
     return (
-    <div className="order-1 md:order-2">
+    <Link to={"/"} className="order-1 md:order-2 cursor-pointer border-none outline-none">
         <img 
-            src="../../public/images/bazooka-logo-origin.png"
+            src="/images/bazooka-logo-origin.png"
             alt="brand logo"
-            className="w-32 h-10"
+            className="w-32 h-10 border-none outline-none"
         />
-    </div>
+    </Link>
     )
 }
 

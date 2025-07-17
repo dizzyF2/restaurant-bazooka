@@ -36,13 +36,14 @@ function ShowCase() {
                         key={item.id}
                         src={item.image}
                         alt={`food${item.id}`}
+                        loading="lazy"
                         className="rounded-lg object-cover size-auto"
                     />
                 ))}
             </div>
 
             <div className="flex-1 space-y-6">
-                <p className="text-yellow-400 italic">Why Choose us</p>
+                <p className="text-primary italic">Why Choose us</p>
                 <h2 className="text-3xl md:text-4xl font-bold">
                 <span className="text-yellow-500">Exta</span> ordinary taste<br />
                 <span className="text-white">And Experienced</span>

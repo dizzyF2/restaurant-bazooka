@@ -12,13 +12,16 @@ function Hero() {
                 <p className="text-gray-300 max-w-md">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue.
                 </p>
-                <button className="bg-primary text-gray-100 font-semibold px-6 py-3 rounded-full hover:bg-yellow-600 transition cursor-pointer">See Menu</button>
+                <button className="bg-primary text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-700 transition cursor-pointer">
+                    See Menu
+                </button>
             </div>
 
             <div className="relative mt-10 md:mt-0 md:w-1/2 flex justify-center items-center bg-black">
                 <img
                     src="/images/hero-origin.jpg"
                     alt="Hero Food"
+                    loading="lazy"
                     className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full object-cover z-10 bg-inherit"
                 />
             </div>

@@ -9,7 +9,7 @@ function SearchBar() {
             placeholder="Search..."
             className="hidden md:block w-[90%] border-none outline-none bg-inherit placeholder:text-white"
         />
-        <Search color="white" size={20} className="cursor-pointer"/>
+        <Search size={20} className="rounded-full text-white hover:text-primary md:hover:text-white cursor-pointer"/>
     </div>
     )
 }
