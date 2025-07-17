@@ -80,12 +80,15 @@ function Menu() {
                     </p>
                 </div>
                 <Categories categories={categories} onSelect={setSelected} onReset={handleResetFilter}  />
-                {loading && 
+                {loading ? 
                     <div className="flex items-center justify-center gap-2 text-primary text-4xl text-center">
                         <Loader2 size={25} className="animate-spin"/> Loading...
                     </div>
+                    : (
+                        <RecipesList recipes={filtered} />
+                    )
                 }
-                <RecipesList recipes={filtered} />
+                
             </div>
         </div>
     )

@@ -12,7 +12,7 @@ function header() {
                 <ul className="order-1 hidden md:flex items-center justify-center gap-5 md:text-xs lg:text-sm">
                     <Link to={"/menu"} className="text-white hover:text-primary duration-300 cursor-pointer">Menu</Link>
                     <li className="text-white hover:text-primary duration-300 cursor-pointer">About</li>
-                    <li className="text-white hover:text-primary duration-300 cursor-pointer">Contact Us</li>
+                    <Link to={"/contact"} className="text-white hover:text-primary duration-300 cursor-pointer">Contact Us</Link>
                 </ul>
                 <Menu
                     className="order-2 block md:hidden cursor-pointer hover:bg-[#ffa60027] p-1 rounded-full"

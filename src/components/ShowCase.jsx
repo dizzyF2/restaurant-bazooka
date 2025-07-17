@@ -45,7 +45,7 @@ function ShowCase() {
             <div className="flex-1 space-y-6">
                 <p className="text-primary italic">Why Choose us</p>
                 <h2 className="text-3xl md:text-4xl font-bold">
-                <span className="text-yellow-500">Exta</span> ordinary taste<br />
+                <span className="text-yellow-500">Extra</span> ordinary taste<br />
                 <span className="text-white">And Experienced</span>
                 </h2>
                 <p className="text-gray-300">

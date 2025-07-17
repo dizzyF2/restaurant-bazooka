@@ -9,6 +9,7 @@ function ProductCard({image, title, description, price, category}) {
                 <img
                     src={image}
                     alt="product image"
+                    loading="lazy"
                     className="absolute object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <button
