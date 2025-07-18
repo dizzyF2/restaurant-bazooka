@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 function Hero() {
@@ -12,9 +13,9 @@ function Hero() {
                 <p className="text-gray-300 max-w-md">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue.
                 </p>
-                <button className="bg-primary text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-700 transition cursor-pointer">
+                <Link to={"/menu"} className="bg-primary text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-700 transition cursor-pointer">
                     See Menu
-                </button>
+                </Link>
             </div>
 
             <div className="relative mt-10 md:mt-0 md:w-1/2 flex justify-center items-center bg-black">

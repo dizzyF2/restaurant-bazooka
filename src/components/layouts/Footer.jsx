@@ -15,21 +15,25 @@ function Footer() {
               <span>|</span>
               <Link to="/contact" className="hover:text-orange-400 transition">Contact</Link>
               <span>|</span>
-              <Link to="/about" className="hover:text-orange-400 transition">Our Story</Link>
+              <Link to="/" className="hover:text-orange-400 transition">Our Story</Link>
             </div>
 
             <div className="flex gap-4">
-              <a href="#" className="hover:text-orange-400 transition" aria-label="Facebook">
+              <a
+                href="https://www.facebook.com/Bazookaegy/" 
+                target="_blank"
+                className="hover:text-orange-400 transition" 
+                aria-label="Facebook"
+              >
                 <Facebook size={18} />
               </a>
-              <a href="#" className="hover:text-orange-400 transition" aria-label="YouTube">
-                <Youtube size={18} />
-              </a>
-              <a href="#" className="hover:text-orange-400 transition" aria-label="Instagram">
+              <a
+                href="https://www.instagram.com/bazookaegy/" 
+                target="_blank"
+                className="hover:text-orange-400 transition" 
+                aria-label="Instagram"
+              >
                 <Instagram size={18} />
-              </a>
-              <a href="#" className="hover:text-orange-400 transition" aria-label="Twitter">
-                <Twitter size={18} />
               </a>
             </div>
           </div>
