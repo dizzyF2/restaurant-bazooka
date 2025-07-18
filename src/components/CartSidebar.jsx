@@ -79,7 +79,7 @@ function CartSidebar() {
                 <div className="p-4 border-t bg-gray-50 rounded-xl">
                     <div className="flex justify-between gap-1 items-center text-sm font-semibold text-black">
                         <span>Total:</span>
-                        <span>{totalAmount.toFixed(2)} EGP</span>
+                        <span>${totalAmount.toFixed(2)}</span>
                     </div>
                 </div>
             }

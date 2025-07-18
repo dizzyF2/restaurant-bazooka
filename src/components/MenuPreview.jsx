@@ -1,9 +1,13 @@
-import { Plus } from "lucide-react"
+import { Check, Plus } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { useCart } from "../context/CartContext";
 
 function MenuPreview() {
     const [recipes, setRecipes] = useState([])
+    const [added, setAdded] = useState({});
+    
+    const { addToCart } = useCart()
 
     useEffect(() => {
         const fetchRecipes = async () => {
@@ -43,14 +47,40 @@ function MenuPreview() {
                                     <p className="text-gray-800 text-xs line-clamp-2">{recipe.instructions.slice(0, 60)}...</p>
                                 </div>
                             </div>
-                            <button
-                                className={`
-                                self-end inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-xs font-medium text-white
-                                transition-all duration-200 hover:gap-2 focus:outline-none bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer`}
-                            >
-                                <Plus className="h-3 w-3" />
-                                add
-                            </button>
+
+                            <div className="flex items-center justify-between w-full px-2 py-1">
+                                <div className="flex items-baseline gap-1">
+                                    <span className="text-lg font-bold text-gray-900">
+                                        ${(recipe.caloriesPerServing / 10).toFixed(2)}
+                                    </span>
+                                </div>
+                                <button
+                                    onClick={() => {
+                                        addToCart(recipe)
+                                        setAdded((prev) => ({ ...prev, [recipe.id]: true }))
+                                        setTimeout(() => {setAdded((prev) => (
+                                            { ...prev, [recipe.id]: false }
+                                        ))}, 1000)
+                                    }}
+                                    className={`
+                                        inline-flex self-end items-center gap-1 rounded-md px-3 py-1.5 text-xs font-medium text-white
+                                        transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer
+                                        ${added[recipe.id] ? "bg-green-600 scale-105" : "bg-blue-600 hover:gap-2 hover:scale-105"}
+    `}
+                                >
+                                    {added[recipe.id] ? (
+                                        <>
+                                        <Check className="h-3 w-3" />
+                                        Added
+                                        </>
+                                    ) : (
+                                        <>
+                                        <Plus className="h-3 w-3" />
+                                        Add
+                                        </>
+                                    )}
+                                </button>
+                            </div>
                         </div>
                     ))}
                 </div>

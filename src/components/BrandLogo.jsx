@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom"
 
-function BrandLogo() {
+function BrandLogo({onclick}) {
     return (
-    <Link to={"/"} className="order-1 md:order-2 cursor-pointer border-none outline-none">
+    <Link 
+        to={"/"} 
+        onClick={onclick}
+        className="order-1 md:order-2 cursor-pointer border-none outline-none"
+    >
         <img 
             src="/images/bazooka-logo-origin.png"
             alt="brand logo"
